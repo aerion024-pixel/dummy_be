@@ -2,13 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ContentMetric extends Model
 {
-    protected $guarded = ['id'];
+    use HasFactory;
 
-public function content() {
-    return $this->belongsTo(Content::class);
-}
+    protected $table = "content_metrics";
+
+    protected $guarded = ["id"];
+
+    public function content()
+    {
+        return $this->belongsTo(Content::class);
+    }
 }
