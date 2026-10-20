@@ -7,18 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Channel extends Model
 {
-    use HasFactory
-    protected $table = "channels"
+    use HasFactory;
+
+    protected $table = "channels";
 
     protected $fillable = [
-    "user_id", "platform", "channel_name", "channel_url", "subcriber_count",
-    ]
+        "user_id",
+        "platform",
+        "channel_name",
+        "channel_url",
+        "subscriber_count",
+    ];
 
-public function user() {
-    return $this->belongsTo(User::class);
-}
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-public function contents() {
-    return $this->hasMany(Content::class);
-}
+    public function contents()
+    {
+        return $this->hasMany(Content::class);
+    }
 }

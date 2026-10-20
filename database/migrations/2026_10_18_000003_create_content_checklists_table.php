@@ -14,11 +14,11 @@ return new class extends Migration
             $table->string("task_name");
             $table->boolean("is_completed")->default(false);
             $table->timestamps();
-        })
+        });
     }
 
     public function down(): void
     {
-        Schema::dropIfExits("content_checklist")
+        Schema::dropIfExits("content_checklist");
     }
-}
+};
